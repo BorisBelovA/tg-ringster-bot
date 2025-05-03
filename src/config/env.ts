@@ -5,7 +5,7 @@ export const BOT_TOKEN = (() => {
     console.log('Running in non-prod');
     dotenv.config();
   }
-  console.log('BOT_TOKEN in env:', process.env.BOT_TOKEN);
+  console.log('BOT_TOKEN in env:', process.env);
   const token = process.env.BOT_TOKEN;
   if (!token) {
     throw new Error('BOT_TOKEN is not set in .env file');
