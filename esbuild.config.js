@@ -1,5 +1,5 @@
 const esbuild = require('esbuild');
-const alias = require('@esbuild-plugin-alias');
+const alias = require('esbuild-plugin-alias');
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
