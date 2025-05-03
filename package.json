@@ -5,7 +5,8 @@
     "scripts": {
         "dev": "nodemon",
         "build": "tsc",
-        "start": "node dist/index.js"
+        "start": "node -r tsconfig-paths/register dist/index.js",
+        "run-local": "node dist/index.js"
     },
     "dependencies": {
         "dotenv": "^16.0.3",
