@@ -1,0 +1,22 @@
+// .vscode/launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "🔍 Debug Bot (ts-node)",
+        "runtimeArgs": [
+          "-r", "ts-node/register",
+          "-r", "tsconfig-paths/register"
+        ],
+        "args": ["${workspaceFolder}/src/index.ts"],
+        "cwd": "${workspaceFolder}",
+        "protocol": "inspector",
+        "envFile": "${workspaceFolder}/.env",
+        "console": "integratedTerminal",
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ]
+  }
+  

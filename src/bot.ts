@@ -1,5 +1,5 @@
 import { Scenes, session, Telegraf } from 'telegraf';
-import { BOT_TOKEN } from '@config/env';
+import { BOT_TOKEN } from './config/env';
 import { setupActions } from '@actions/index';
 import { singleReminderScene } from '@scenes/single-reminder';
 import { MyContext } from 'utils';
