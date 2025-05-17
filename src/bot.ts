@@ -31,6 +31,12 @@ const startListening = async (bot: Telegraf<MyContext>) => {
       throw new Error('PORT environment variable is required in production');
     }
     app.use(express.json()); // важно: телеграм шлёт JSON
+    
+    app.post('/telegram', (req, res, next) => {
+      console.log('✅ Telegram webhook hit');
+      next();
+    });
+
     app.use(bot.webhookCallback('/telegram'));
 
     await bot.telegram.setWebhook(`https://${DOMAIN}/telegram`);
@@ -40,6 +46,10 @@ const startListening = async (bot: Telegraf<MyContext>) => {
       res.send('🤖 Bot is running via webhook')
     });
 
+    app.get('/test', (req, res) => {
+      res.send('✅ Bot server is live');
+    });
+    
     app.listen(PORT, () => {
       console.log(`🚀 Express server listening on port ${PORT}`);
     });
